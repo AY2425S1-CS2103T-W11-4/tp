@@ -25,7 +25,7 @@ import seedu.address.testutil.PersonBuilder;
  */
 public class RemarkCommandTest {
     private static final String REMARK_STUB = "Some remark";
-    
+
     private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
 
     @Test
