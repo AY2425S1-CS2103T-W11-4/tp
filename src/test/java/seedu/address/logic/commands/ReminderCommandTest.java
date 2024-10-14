@@ -35,7 +35,7 @@ public class ReminderCommandTest {
         Reminder validReminder = new Reminder("1 day");
 
         Person scheduledPerson = new PersonBuilder(personToRemind)
-                .withSchedule(validSchedule.dateTime).build();
+                .withSchedule(validSchedule.dateTime, validSchedule.getNotes()).build();
         model.setPerson(personToRemind, scheduledPerson);
 
         ReminderCommand command = new ReminderCommand(personToRemind.getName().toString(),
@@ -60,7 +60,8 @@ public class ReminderCommandTest {
         Reminder invalidReminder = new Reminder("1 cycle"); // Invalid time
 
         // Set the schedule first
-        Person personWithSchedule = new PersonBuilder(personToRemind).withSchedule(validSchedule.dateTime).build();
+        Person personWithSchedule = new PersonBuilder(personToRemind)
+                .withSchedule(validSchedule.dateTime, validSchedule.getNotes()).build();
         model.setPerson(personToRemind, personWithSchedule);
 
         // Create reminder command

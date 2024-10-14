@@ -115,7 +115,8 @@ class JsonAdaptedPerson {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
                     Schedule.class.getSimpleName()));
         }
-        final Schedule modelSchedule = new Schedule(schedule);
+
+        final Schedule modelSchedule = new Schedule(schedule, note);
 
         if (reminderTime == null) {
             throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT,
